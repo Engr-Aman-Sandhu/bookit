@@ -1,15 +1,17 @@
 import mongoose from 'mongoose';
 
 const dbConnect = () => {
-  if (mangoose.connection.readyState >= 1) {
+  if (mongoose.connection.readyState >= 1) {
     return;
   }
-  mangoose.connect(process.env.DB_LOCAL_URI, {
-    useNewqUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: true,
-    useCreateIndex: true,
-  });
+  mongoose
+    .connect(process.env.DB_LOCAL_URI, {
+      useNewqUrlParser: true,
+      useUnifiedTopology: true,
+      useFindAndModify: true,
+      useCreateIndex: true,
+    })
+    .then((con) => console.log('Connected to local database'));
 };
 
 export default dbConnect;
