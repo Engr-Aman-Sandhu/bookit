@@ -98,6 +98,14 @@ const roomSchema = new mongoose.Schema({
       },
     },
   ],
+  user: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 export default mangoose.model.Room || mangoose.model('Room', roomSchema);
