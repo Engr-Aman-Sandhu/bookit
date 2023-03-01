@@ -49,6 +49,55 @@ const roomSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  ratings: {
+    type: Number,
+    default: 0,
+  },
+  numOfReviews: {
+    type: Number,
+    default: 0,
+  },
+  images: [
+    {
+      public_id: {
+        type: String,
+        required: true,
+      },
+      url: {
+        type: String,
+        required: true,
+      },
+    },
+  ],
+  category: {
+    type: String,
+    required: [true, 'Please enter room category'],
+    enum: {
+      values: ['King', 'Single', 'Twins'],
+      message: 'Please select correct category fro room',
+    },
+  },
+  reviews: [
+    {
+      user: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User',
+        required: true,
+      },
+      name: {
+        type: String,
+        required: true,
+      },
+      rating: {
+        type: Number,
+        required: true,
+      },
+      comment: {
+        type: String,
+        required: true,
+      },
+    },
+  ],
 });
 
 export default mangoose.model.Room || mangoose.model('Room', roomSchema);
