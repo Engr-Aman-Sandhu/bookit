@@ -7,9 +7,9 @@ const roomSchema = new mongoose.Schema({
     trim: true,
     maxLength: [100, 'Room name cannot exceeds 100 characters'],
   },
-  price: {
+  pricePerNight: {
     type: Number,
-    required: [true, 'Please enter room price'],
+    required: [true, 'Please enter room price per night'],
     maxLength: [100, 'Room name cannot exceeds 100 characters'],
     default: 0.0,
   },
