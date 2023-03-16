@@ -56,24 +56,22 @@ const updateRoom = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-const deleteRoom =catchAsyncErrors( async (req, res, next) => {
-  try {
-    const room = await Room.findById(req.query.id);
-    if (!room) {
-      // res.status(404).json({
-      //   success: false,
-      //   error: 'Room not found with this ID',
-      // });
-      return next(new ErrorHandler('Room not found with this ID', 404));
-    }
+const deleteRoom = catchAsyncErrors(async (req, res, next) => {
+  const room = await Room.findById(req.query.id);
+  if (!room) {
+    // res.status(404).json({
+    //   success: false,
+    //   error: 'Room not found with this ID',
+    // });
+    return next(new ErrorHandler('Room not found with this ID', 404));
+  }
 
-    await room.remove();
+  await room.remove();
 
-    res.status(200).json({
-      success: true,
-      message: 'Room deleted successfully',
-    });
- 
+  res.status(200).json({
+    success: true,
+    message: 'Room deleted successfully',
+  });
 });
 
 export { allRooms, newRoom, getSingleRoom, updateRoom, deleteRoom };
