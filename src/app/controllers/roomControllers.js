@@ -17,7 +17,9 @@ const allRooms = catchAsyncErrors(async (req, res) => {
 
   res.status(200).json({
     success: true,
-    count: rooms.length,
+    roomsCount,
+    resPerPage,
+    filteredRoomsCount,
     rooms,
   });
 });
