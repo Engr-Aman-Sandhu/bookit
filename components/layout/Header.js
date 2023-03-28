@@ -55,7 +55,7 @@ const Header = () => {
                 <span>{user && user.name}</span>
               </a>
 
-              <div
+              {/* <div
                 className="dropdown-menu"
                 aria-labelledby="dropDownMenuButton"
               >
@@ -97,7 +97,7 @@ const Header = () => {
                     Logout
                   </a>
                 </Link>
-              </div>
+              </div> */}
             </div>
           ) : (
             !loading && (
