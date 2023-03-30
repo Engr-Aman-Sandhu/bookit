@@ -26,7 +26,7 @@ const Header = () => {
         <div className="col-3 p-0">
           <div className="navbar-brand">
             <Link href="/">
-              <img
+              <image
                 style={{ cursor: 'pointer' }}
                 src="/images/bookit_logo.png"
                 alt="BookIT"
