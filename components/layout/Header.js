@@ -46,7 +46,7 @@ const Header = () => {
                 aria-expanded="false"
               >
                 <figure className="avatar avatar-nav">
-                  <img
+                  <image
                     src={user.avatar && user.avatar.url}
                     alt={user && user.name}
                     className="rounded-circle"
