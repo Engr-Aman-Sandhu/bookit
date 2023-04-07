@@ -20,5 +20,3 @@ export const getServerSideProps = wrapper.getServerSideProps(
     );
   }
 );
-
-// regex to match the phone number in the format of (xxx) xxx-xxxx
