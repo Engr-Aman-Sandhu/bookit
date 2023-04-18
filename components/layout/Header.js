@@ -26,7 +26,7 @@ const Header = () => {
         <div className="col-3 p-0">
           <div className="navbar-brand">
             <Link href="/">
-              <image
+              <img
                 style={{ cursor: 'pointer' }}
                 src="/images/bookit_logo.png"
                 alt="BookIT"
@@ -46,7 +46,7 @@ const Header = () => {
                 aria-expanded="false"
               >
                 <figure className="avatar avatar-nav">
-                  <image
+                  <img
                     src={user.avatar && user.avatar.url}
                     alt={user && user.name}
                     className="rounded-circle"
@@ -55,7 +55,7 @@ const Header = () => {
                 <span>{user && user.name}</span>
               </a>
 
-              {/* <div
+              <div
                 className="dropdown-menu"
                 aria-labelledby="dropDownMenuButton"
               >
@@ -97,7 +97,7 @@ const Header = () => {
                     Logout
                   </a>
                 </Link>
-              </div> */}
+              </div>
             </div>
           ) : (
             !loading && (
